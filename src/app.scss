@@ -1,0 +1,169 @@
+/* ============================================================
+ * 粤语学习小程序 · 全局样式与设计系统（375 设计稿，px 自动转 rpx）
+ * 由网页版 Tailwind 主题提取：主色 #2B5CE6 / 强调 #F5A623 / 底 #F0F4FF
+ * ============================================================ */
+page {
+  --primary: #2b5ce6;
+  --primary-light: #4a7cf7;
+  --primary-deep: #1a3fbf;
+  --accent: #f5a623;
+  --accent-dark: #e8950f;
+  --bg: #f0f4ff;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --muted: #7a8499;
+  --soft-blue: #eef3ff;
+  --soft-bg: #f8faff;
+  --line: #e8edff;
+  --success: #22c55e;
+  --danger: #ef4444;
+  background: #f0f4ff;
+  color: #1a1a2e;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+}
+
+view,
+text,
+scroll-view,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+/* ---------- 布局工具 ---------- */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-1 { flex: 1; min-width: 0; min-height: 0; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.flex-shrink-0 { flex-shrink: 0; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.w-full { width: 100%; }
+
+/* ---------- 文字 ---------- */
+.t-text { color: #1a1a2e; }
+.t-muted { color: #9ca3af; }
+.t-primary { color: #2b5ce6; }
+.t-white { color: #fff; }
+.t-danger { color: #ef4444; }
+.t-success { color: #22c55e; }
+.t-accent { color: #f5a623; }
+.t-bold { font-weight: 700; }
+.t-black { font-weight: 900; }
+.t-mono { font-family: monospace; }
+.t-xs { font-size: 10px; }
+.t-sm { font-size: 12px; }
+.t-base { font-size: 14px; }
+.t-lg { font-size: 16px; }
+.t-xl { font-size: 18px; }
+.t-2xl { font-size: 24px; }
+.t-5xl { font-size: 48px; }
+.t-6xl { font-size: 60px; }
+.t-7xl { font-size: 72px; }
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* ---------- 卡片 / 容器 ---------- */
+.page-pad { padding: 12px; }
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(43, 92, 230, 0.06);
+}
+.card-sm {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(43, 92, 230, 0.05);
+}
+.soft-block { background: #f8faff; border-radius: 12px; padding: 12px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background: #eef3ff;
+  color: #2b5ce6;
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.header-gradient {
+  background: linear-gradient(160deg, #1a3fbf 0%, #2b5ce6 50%, #4a7cf7 100%);
+  padding: 20px 16px 24px;
+}
+.btn-gradient {
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  text-align: center;
+}
+.btn-plain {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #1a1a2e;
+  font-weight: 700;
+  border-radius: 12px;
+  text-align: center;
+}
+.sound-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3ff;
+  border-radius: 999px;
+}
+/* 可点击元素的按压反馈 */
+.tap { transition: transform 0.12s ease; }
+.tap:active { transform: scale(0.95); }
+
+/* ---------- 输入框 ---------- */
+.input-box {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  line-height: 46px;
+  box-sizing: border-box;
+  background: #eef3ff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+
+/* 微信基础库对 Input 的默认宽高和 flex 计算不一致，统一固定可点击区域 */
+.input-box,
+.ai-cfg-input,
+.ai-input,
+.hs-search-input {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 独立功能页通用容器 ---------- */
+.pg-page {
+  min-height: 100vh;
+  background: #f0f4ff;
+  padding: 16px 16px 32px;
+  box-sizing: border-box;
+}
+.pg-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- 进度条 ---------- */
+.progress-track { height: 8px; background: rgba(255, 255, 255, 0.2); border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: #fff; border-radius: 999px; }

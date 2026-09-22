@@ -1,0 +1,190 @@
+.pf-page {
+  min-height: 100vh;
+  background: #f0f4ff;
+  padding-bottom: 24px;
+}
+
+.pf-header {
+  background: linear-gradient(160deg, #1a3fbf 0%, #2b5ce6 50%, #4a7cf7 100%);
+  padding: 20px 16px 24px;
+}
+.pf-user-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pf-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pf-avatar-text {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+}
+.pf-username {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+}
+.pf-user-sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.pf-login-btn {
+  background: #fff;
+  color: #2b5ce6;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+.pf-logout-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 13px;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.pf-stat-row {
+  display: flex;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 12px 0;
+}
+.pf-stat {
+  flex: 1;
+  text-align: center;
+}
+.pf-stat-num {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+}
+.pf-stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.pf-body {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pf-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.pf-ach-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.pf-ach {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: #eef3ff;
+}
+.pf-ach-on {
+  background: linear-gradient(135deg, #fff4e0, #ffe6b8);
+}
+.pf-ach-lock {
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.pf-menu-col {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+.pf-menu-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.pf-menu-row:last-child {
+  border-bottom: none;
+}
+.pf-menu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.pf-menu-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.pf-menu-desc {
+  font-size: 12px;
+  color: #9ca3af;
+}
+.pf-menu-arrow {
+  color: #d1d5db;
+  font-size: 20px;
+}
+.pf-reset-text {
+  color: #ef4444;
+}
+
+.pf-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.pf-wall-item {
+  width: calc(25% - 6px);
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 12px;
+  background: #f8faff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.pf-wall-on {
+  background: linear-gradient(135deg, #eef3ff, #dce8ff);
+}
+.pf-wall-icon {
+  font-size: 22px;
+}
+.pf-wall-lock {
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.pf-version {
+  text-align: center;
+  color: #c4c9d4;
+  font-size: 11px;
+  margin-top: 8px;
+}
+.simple-profile{min-height:100vh;background:#f7f8fc;padding:30px 20px;box-sizing:border-box;color:#192b59}.profile-eyebrow{display:block;color:#617bd1;font-size:13px;font-weight:700}.profile-title{display:block;font-size:29px;font-weight:900;margin-top:5px}.profile-account,.profile-settings{background:#fff;border-radius:22px;padding:18px;margin-top:20px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 25px rgba(31,57,120,.07)}.profile-avatar{width:52px;height:52px;border-radius:16px;background:#edf2ff;display:flex;align-items:center;justify-content:center;font-size:27px}.profile-name{display:block;font-size:17px;font-weight:700}.profile-desc{display:block;color:#8b96ac;font-size:11px;margin-top:5px}.profile-login{background:#335eea!important;color:#fff!important}.profile-settings{display:block}.profile-section{display:block;font-size:16px;font-weight:700}.profile-goal{margin-top:22px}.profile-scale{display:flex;justify-content:space-between;color:#9aa4b8;font-size:10px}.profile-reset{margin-top:22px!important;background:#fff!important;color:#d45862!important;border:1px solid #f1d7d9!important}.profile-foot{margin-top:16px;padding:14px;text-align:center;color:#8b96ac;font-size:11px}

@@ -1,0 +1,175 @@
+.dlg-page {
+  min-height: 100vh;
+  background: #f0f4ff;
+  padding-bottom: 24px;
+}
+
+/* ---------- 场景列表 ---------- */
+.dlg-list-header {
+  background: linear-gradient(160deg, #1a3fbf 0%, #2b5ce6 50%, #4a7cf7 100%);
+  padding: 20px 16px 24px;
+}
+.dlg-list-lead {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+.dlg-list-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 2px;
+}
+.dlg-list-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dlg-list-tag {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 11px;
+}
+.dlg-card-col {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dlg-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(43, 92, 230, 0.05);
+}
+.dlg-card-emoji {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eef3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.dlg-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.dlg-card-sub {
+  color: #9ca3af;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.dlg-card-arrow {
+  color: #d1d5db;
+  font-size: 22px;
+}
+
+/* ---------- 对话详情 ---------- */
+.dlg-detail-header {
+  background: linear-gradient(160deg, #1a3fbf 0%, #2b5ce6 50%, #4a7cf7 100%);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dlg-back {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dlg-back-arrow {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+.dlg-detail-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.dlg-detail-sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.dlg-bubble-col {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dlg-line-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.dlg-left {
+  align-items: flex-start;
+}
+.dlg-right {
+  align-items: flex-end;
+}
+.dlg-role {
+  font-size: 10px;
+  color: #9ca3af;
+  padding: 0 4px;
+  margin-bottom: 4px;
+}
+.dlg-line-inner {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 85%;
+}
+.dlg-line-inner-r {
+  flex-direction: row-reverse;
+}
+.dlg-bubble {
+  border-radius: 16px;
+  padding: 12px 16px;
+}
+.dlg-bot {
+  background: #fff;
+  border-top-left-radius: 6px;
+  box-shadow: 0 2px 8px rgba(43, 92, 230, 0.06);
+}
+.dlg-user {
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+  border-top-right-radius: 6px;
+}
+.dlg-yue {
+  color: #1a1a2e;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.dlg-yue-white {
+  color: #fff;
+}
+.dlg-man {
+  color: #9ca3af;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.dlg-man-white {
+  color: rgba(255, 255, 255, 0.75);
+}
+.dlg-line-sound {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}

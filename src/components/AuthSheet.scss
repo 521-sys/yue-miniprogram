@@ -1,0 +1,81 @@
+.auth-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 微信按钮：重置原生 Button 样式 */
+.auth-wx-btn {
+  margin: 0;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: #07c160;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  border: none;
+}
+.auth-wx-btn::after {
+  border: none;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.auth-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+.auth-divider-text {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.auth-seg {
+  display: flex;
+  background: #eef3ff;
+  border-radius: 12px;
+  padding: 4px;
+}
+.auth-seg-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+.auth-seg-on {
+  background: #fff;
+  color: #2b5ce6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.auth-ph {
+  color: #9ca3af;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: #2b5ce6;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+.auth-submit-disabled {
+  opacity: 0.6;
+}
+
+.auth-tip {
+  text-align: center;
+  line-height: 1.6;
+}

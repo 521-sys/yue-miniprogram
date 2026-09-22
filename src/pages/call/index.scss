@@ -1,0 +1,48 @@
+.call-page { min-height: 100vh; box-sizing: border-box; padding: 20px 28px 26px; padding-bottom: calc(26px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; color: #f4f6f5; background: radial-gradient(ellipse at 50% 22%, #35483e 0, #222c28 48%, #191e1c 100%); }
+.call-mode { display: flex; align-items: center; justify-content: center; gap: 6px; color: #b8c3bb; font-size: 11px; }
+.call-mode-dot { width: 5px; height: 5px; border-radius: 50%; background: #b9c5ba; }
+.call-stage { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 48px 0 24px; }
+.call-orbit { padding: 7px; border-radius: 32px; border: 1px solid rgba(255,255,255,.08); }
+.call-orbit-inner { width: 94px; height: 94px; display: flex; align-items: center; justify-content: center; border-radius: 25px; background: linear-gradient(145deg, #829d82, #476a58); font-size: 43px; color: #f1f7eb; }
+.call-orbit-active { animation: call-breathe 3s ease-in-out infinite; }
+@keyframes call-breathe { 50% { border-color: rgba(209,233,214,.3); } }
+.call-title { display: block; font-size: 25px; font-weight: 600; margin-top: 23px; letter-spacing: 2px; }
+.call-intro { display: block; font-size: 12px; color: #aab7af; margin-top: 10px; }
+.call-status { display: block; margin-top: 25px; font-size: 14px; color: #d3dcd6; }
+.call-timer { display: block; font-size: 17px; font-variant-numeric: tabular-nums; letter-spacing: 2px; margin-top: 10px; }
+.call-status-help { display: block; max-width: 285px; font-size: 11px; line-height: 1.8; text-align: center; color: #a7b3ab; margin-top: 12px; }
+.call-controls { padding: 25px 0 28px; }
+.call-control-row { display: flex; justify-content: center; gap: 78px; }
+.call-control { display: flex; flex-direction: column; align-items: center; }
+.call-button { width: 66px; height: 66px; min-width: 66px; padding: 0; margin: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+.call-button::after, .call-text-button::after, .call-recording-button::after { border: none; }
+.call-start { background: #07c160; }
+.call-hangup { background: #ed5057; }
+.call-mic { background: rgba(255,255,255,.16); }
+.call-mic-muted { background: #e4e9e6; }
+.call-button[disabled] { background: rgba(255,255,255,.07); opacity: .4; }
+.call-control-label { font-size: 12px; color: #e1e6e3; margin-top: 12px; }
+.call-phone-icon { position: relative; width: 28px; height: 13px; border: 4px solid #fff; border-bottom: 0; border-radius: 22px 22px 0 0; }
+.call-phone-icon::before, .call-phone-icon::after { content: ''; position: absolute; top: 4px; width: 8px; height: 9px; background: white; border-radius: 2px; }
+.call-phone-icon::before { left: -5px; }
+.call-phone-icon::after { right: -5px; }
+.call-start .call-phone-icon { transform: rotate(-135deg); }
+.call-mic-icon { position: relative; width: 22px; height: 23px; border: 2px solid #fff; border-top: 0; border-radius: 0 0 12px 12px; margin-top: 4px; }
+.call-mic-capsule { position: absolute; left: 5px; top: -7px; width: 8px; height: 22px; border-radius: 6px; background: #fff; }
+.call-mic-icon::after { content: ''; position: absolute; left: 8px; top: 21px; width: 2px; height: 5px; background: #fff; }
+.call-mic-muted .call-mic-icon { border-color: #35453a; }
+.call-mic-muted .call-mic-capsule, .call-mic-muted .call-mic-icon::after { background: #35453a; }
+.call-mic-slash { position: absolute; width: 34px; height: 2px; background: #35453a; transform: rotate(-45deg); box-shadow: 0 2px 0 #e4e9e6; }
+.call-error { padding: 12px; background: rgba(237,80,87,.12); color: #ffc5c5; font-size: 12px; line-height: 1.7; border-radius: 10px; }
+.call-text-button { padding: 0; background: transparent; color: #b5c4bb; font-size: 11px; line-height: 30px; margin: 0 auto; }
+.call-messages { height: 130px; margin-top: 10px; }
+.call-message { padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; background: rgba(255,255,255,.05); }
+.call-message-label { display: block; font-size: 10px; color: #a1b4a8; margin-bottom: 4px; }
+.call-message-text { display: block; font-size: 14px; line-height: 1.5; }
+.call-message-recording .call-message-text { font-size: 11px; }
+.call-empty { font-size: 11px; color: #aab7af; }
+.call-recordings { padding: 15px; background: rgba(255,255,255,.05); border-radius: 14px; margin-bottom: 22px; }
+.call-section-title { font-size: 14px; }
+.call-recording-help { display: block; font-size: 11px; color: #aab7af; line-height: 1.7; margin: 8px 0; }
+.call-recording-button { background: rgba(255,255,255,.07); border-radius: 10px; color: #dce5df; font-size: 12px; text-align: left; padding: 0 12px; line-height: 40px; margin: 7px 0 0; }
+.call-footnote { text-align: center; font-size: 10px; color: #97a69d; }

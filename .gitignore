@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.temp/
+.rn_temp/
+# 微信开发者工具缓存
+.wxcloud/
+*.log
+.DS_Store
+
+.swc/
+project.private.config.json
+

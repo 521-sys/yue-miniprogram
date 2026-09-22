@@ -1,0 +1,305 @@
+/* ============ AI 聊天 ============ */
+.ai-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.ai-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.ai-cfg {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ai-cfg-tip {
+  line-height: 1.6;
+}
+.ai-cfg-input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  line-height: 44px;
+  box-sizing: border-box;
+  background: #f8faff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+.ai-ph {
+  color: #c4c9d4;
+}
+.ai-cfg-save {
+  padding: 8px 0;
+  font-size: 14px;
+}
+.ai-msg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 320px;
+  max-height: 400px;
+  margin-bottom: 8px;
+}
+.ai-bubble-ai {
+  align-self: flex-start;
+  max-width: 85%;
+  background: #fff;
+  border-radius: 16px;
+  border-top-left-radius: 6px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 4px rgba(43, 92, 230, 0.05);
+}
+.ai-yue {
+  color: #1a1a2e;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.ai-man {
+  color: #9ca3af;
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.ai-listen {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  background: #eef3ff;
+  color: #2b5ce6;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.ai-bubble-user {
+  align-self: flex-end;
+  max-width: 85%;
+  border-radius: 16px;
+  border-top-right-radius: 6px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+}
+.ai-input-row {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+.ai-input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  line-height: 42px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #1a1a2e;
+}
+.ai-send {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.ai-send-disabled {
+  opacity: 0.4;
+}
+
+/* ============ 跟读训练 ============ */
+.prac-intro-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+.prac-intro-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 10px 24px rgba(43, 92, 230, 0.3);
+}
+.prac-intro-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.prac-intro-card {
+  width: 100%;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 2;
+}
+.prac-intro-line {
+  display: block;
+}
+.prac-start-btn {
+  padding: 14px 0;
+  font-size: 16px;
+}
+
+.prac-done-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+.prac-done-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: #2b5ce6;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prac-done-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1a1a2e;
+}
+.prac-avg {
+  font-size: 36px;
+  font-weight: 900;
+  color: #2b5ce6;
+}
+.prac-avg-unit {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+.prac-done-btn {
+  flex: 1;
+  padding: 12px 0;
+}
+
+.prac-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.prac-word-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(43, 92, 230, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.prac-word-big {
+  font-size: 48px;
+  font-weight: 900;
+  color: #1a1a2e;
+  letter-spacing: 4px;
+}
+.prac-jyut {
+  color: #2b5ce6;
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: 500;
+}
+.prac-rate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #eef3ff;
+  color: #2b5ce6;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.prac-rec-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.prac-rec-tip {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 700;
+}
+.prac-mic {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2b5ce6, #4a7cf7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 12px 24px -6px rgba(43, 92, 230, 0.5);
+}
+.prac-mic-on {
+  background: #ef4444;
+  box-shadow: 0 12px 24px -6px rgba(239, 68, 68, 0.5);
+}
+.prac-mic-icon {
+  font-size: 28px;
+}
+.prac-play-btn {
+  background: #f3f4f6;
+  color: #1a1a2e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.prac-score {
+  font-size: 30px;
+  font-weight: 900;
+  color: #2b5ce6;
+}
+.prac-next {
+  padding: 14px 0;
+  font-size: 16px;
+}
+.prac-end {
+  padding: 12px 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
