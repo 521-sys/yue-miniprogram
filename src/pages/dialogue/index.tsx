@@ -28,10 +28,6 @@ export default function DialoguePage() {
         </View>
       </View>
 
-      <View className='btn-gradient dlg-generate-btn tap' onClick={() => Taro.navigateTo({ url: '/pages/dialogue-generate/index' })}>
-        <Text>✨ AI 生成我的场景</Text>
-      </View>
-
       <View className='dlg-card-col'>
         {dialogues.map((d) => (
           <View

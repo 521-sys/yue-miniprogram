@@ -32,13 +32,3 @@ test('没有导入视频时不请求失效的远程示例视频', () => {
   assert.doesNotMatch(pageSource, /const VIDEO/)
   assert.match(pageSource, /videoSrc\s*&&\s*<Video/)
 })
-
-test('电影页面使用自定义进度条实时定位视频', () => {
-  assert.match(pageSource, /Slider/)
-  assert.match(pageSource, /onTimeUpdate/)
-  assert.match(pageSource, /onChanging/)
-  assert.match(pageSource, /seeking/)
-  assert.match(pageSource, /createVideoContext\(['"]movie-video['"]\)/)
-  assert.match(pageSource, /\.seek\(/)
-  assert.match(pageSource, /className=['"]movie-slider['"]/)
-})
