@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { View, Text } from '@tarojs/components'
-import Taro from '@tarojs/taro'
-import { DIALOGUES } from '../../data/dialogues'
+import Taro, {useDidShow, useDidHide} from '@tarojs/taro'
+import type { Dialogue } from '../../data/dialogues'
+import { getPublishedScene } from '../../lib/scene-api'
 import { CUSTOM_DIALOGUES_KEY, readCustomDialogueEntries, toggleDialogueFavorite } from '../../lib/dialogue-data'
-import { speak, speakAiReply, stopSpeak } from '../../lib/speech'
+import { speak, speakAiReply, stopSpeak, playSceneAudio } from '../../lib/speech'
 import '../dialogue/index.scss'
 import './index.scss'
 
@@ -12,21 +13,29 @@ export default function DlgDetailPage() {
   const router = Taro.useRouter()
   const id = router.params?.id || ''
   const customEntries = readCustomDialogueEntries(Taro.getStorageSync(CUSTOM_DIALOGUES_KEY))
-  const customEntry = customEntries.find((entry) => entry.dialogue.id === id)
-  const dialogue = [...DIALOGUES, ...customEntries.map((entry) => entry.dialogue)].find((d) => d.id === id)
+  const localId=id.startsWith('local:')?id.slice(6):id
+  const customEntry = id.startsWith('official:')?undefined:customEntries.find((entry) => entry.dialogue.id === localId)
+  const [official,setOfficial]=useState<Dialogue>()
+  const [loading,setLoading]=useState(id.startsWith('official:'))
+  const [error,setError]=useState('')
+  const dialogue=id.startsWith('official:')?official:customEntry?.dialogue
+  async function refresh(){if(!id.startsWith('official:'))return;setLoading(true);setOfficial(undefined);setError('');try{setOfficial(await getPublishedScene(Number(id.slice(9))))}catch(e){setError(e instanceof Error?e.message:'场景读取失败')}finally{setLoading(false)}}
+  useDidShow(()=>{void refresh()})
+  useDidHide(()=>stopSpeak())
 
   useEffect(() => {
     if (dialogue) Taro.setNavigationBarTitle({ title: `${dialogue.emoji} ${dialogue.title}` })
     return () => stopSpeak()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id])
+  }, [id,dialogue?.title])
 
   if (!dialogue) {
     return (
       <View className='pg-page'>
         <View className='empty-col'>
           <View className='empty-icon'><Text>🤷</Text></View>
-          <Text className='t-muted t-sm'>没找到这个对话场景</Text>
+          <Text className='t-muted t-sm'>{loading?'正在加载场景…':error||'没找到这个对话场景'}</Text>
+          {!!error&&<View onClick={()=>void refresh()}><Text>重试</Text></View>}
           <View className='btn-plain qs-done-btn tap' onClick={() => Taro.navigateBack()}><Text>返回列表</Text></View>
         </View>
       </View>
@@ -45,10 +54,10 @@ export default function DlgDetailPage() {
           </View>
           {!!customEntry && (
             <View className='dlg-favorite-btn tap' onClick={() => {
-              const next = toggleDialogueFavorite(Taro.getStorageSync(CUSTOM_DIALOGUES_KEY), id, Date.now())
+              const next = toggleDialogueFavorite(Taro.getStorageSync(CUSTOM_DIALOGUES_KEY), localId, Date.now())
               Taro.setStorageSync(CUSTOM_DIALOGUES_KEY, JSON.stringify(next))
               Taro.showToast({ title: customEntry.favorite ? '已取消收藏，2小时后自动清理' : '已收藏，永久保存', icon: 'none' })
-              Taro.redirectTo({ url: `/pages/dlgdetail/index?id=${id}` })
+              Taro.redirectTo({ url: `/pages/dlgdetail/index?id=${encodeURIComponent(id)}` })
             }}>
               <Text>{customEntry.favorite ? '★ 已收藏' : '☆ 收藏（保存更久）'}</Text>
             </View>
@@ -66,11 +75,13 @@ export default function DlgDetailPage() {
               <View className={`dlg-line-inner ${isA ? '' : 'dlg-line-inner-r'}`}>
                 <View className={`dlg-bubble ${isA ? 'dlg-bot' : 'dlg-user'}`}>
                   <Text className={`dlg-yue ${isA ? '' : 'dlg-yue-white'}`}>{line.yue}</Text>
+                  {!!line.jyutping&&<View><Text className={`dlg-man ${isA?'':'dlg-man-white'}`}>{line.jyutping}</Text></View>}
                   <View>
                     <Text className={`dlg-man ${isA ? '' : 'dlg-man-white'}`}>{line.man}</Text>
                   </View>
                 </View>
                 <View className='sound-btn dlg-line-sound tap' onClick={() => {
+                  if(line.audioUrl){playSceneAudio(line.audioUrl);return}
                   if (!speak(line.yue)) void speakAiReply(line.yue)
                 }}>
                   <Text className='sound-icon'>🔊</Text>

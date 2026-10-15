@@ -13,6 +13,7 @@ import { speechMode } from './speech-mode'
 
 let curAudio: Taro.InnerAudioContext | null = null
 let lastTmpFile = ''
+export function playSceneAudio(url: string) { stopSpeak(); playSrc(url, 1) }
 
 /** 文本 -> 可播放音频地址（命中离线词库则返回 URL，否则空串） */
 function audioUrl(text: string): string {
